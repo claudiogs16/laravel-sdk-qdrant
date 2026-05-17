@@ -7,7 +7,7 @@
 
 Laravel SDK for [Qdrant](https://qdrant.tech) vector database. Supports collection management, point operations (upsert, search, scroll, recommend, count), payload manipulation, index management, and vector embedding via OpenAI, Gemini, and OpenRouter.
 
-> Forked from [wontonee/laravel-qdrant-sdk](https://github.com/wontonee/laravel-qdrant-sdk) with compatibility for Laravel 11, 12, and 13, re-namespaced to `Claudiogs16\LarQ`.
+> Forked from [wontonee/laravel-qdrant-sdk](https://github.com/wontonee/laravel-qdrant-sdk) with compatibility for Laravel 11, 12, and 13, re-namespaced to `Claudiogs16\LarQ`, and added OpenRouter embedder support.
 
 ---
 

@@ -1,6 +1,6 @@
 {
     "name": "claudiogs16/laravel-sdk-qdrant",
-    "description": "Laravel SDK for Qdrant vector database — search, upsert, collections, payload management with OpenAI and Gemini embedders",
+    "description": "Laravel SDK for Qdrant vector database — search, upsert, collections, payload management with OpenAI, Gemini and OpenRouter embedders",
     "type": "library",
     "license": "MIT",
     "keywords": [
