@@ -5,7 +5,7 @@
 [![PHP Version](https://img.shields.io/packagist/php-v/claudiogs16/laravel-sdk-qdrant.svg?style=flat-square)](https://packagist.org/packages/claudiogs16/laravel-sdk-qdrant)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x%20%7C%2012.x%20%7C%2013.x-red?style=flat-square)](https://laravel.com)
 
-Laravel SDK for [Qdrant](https://qdrant.tech) vector database. Supports collection management, point operations (upsert, search, scroll, recommend, count), payload manipulation, index management, and vector embedding via OpenAI and Gemini.
+Laravel SDK for [Qdrant](https://qdrant.tech) vector database. Supports collection management, point operations (upsert, search, scroll, recommend, count), payload manipulation, index management, and vector embedding via OpenAI, Gemini, and OpenRouter.
 
 > Forked from [wontonee/laravel-qdrant-sdk](https://github.com/wontonee/laravel-qdrant-sdk) with compatibility for Laravel 11, 12, and 13, re-namespaced to `Claudiogs16\LarQ`.
 
@@ -31,11 +31,18 @@ Add to your `.env`:
 LARQ_HOST=http://localhost:6333
 LARQ_API_KEY=
 
+# OpenAI
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=text-embedding-3-small
 
+# Gemini
 GEMINI_API_KEY=
 GEMINI_MODEL=models/embedding-001
+
+# OpenRouter (OpenAI-compatible API)
+OPENROUTER_API_KEY=sk-or-v1-...
+OPENROUTER_MODEL=openai/text-embedding-3-small
+# OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 ```
 
 The published config is at `config/larq.php`.
@@ -127,9 +134,19 @@ use Claudiogs16\LarQ\Qdrant\Vectors\DeleteVector;
 ```php
 use Claudiogs16\LarQ\Embedders\OpenAIEmbedder;
 use Claudiogs16\LarQ\Embedders\GeminiEmbedder;
+use Claudiogs16\LarQ\Embedders\OpenRouterEmbedder;
 
+// OpenAI
 $embedder = new OpenAIEmbedder();
 $vector = $embedder->embed('Some text to embed');
+
+// Gemini
+$gemini = new GeminiEmbedder();
+$vector = $gemini->embed('Some text to embed');
+
+// OpenRouter
+$openrouter = new OpenRouterEmbedder();
+$vector = $openrouter->embed('Some text to embed');
 ```
 
 ### Eloquent Trait
