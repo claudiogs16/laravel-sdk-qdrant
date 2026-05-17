@@ -1,0 +1,65 @@
+{
+    "name": "claudiogs16/laravel-sdk-qdrant",
+    "description": "Laravel SDK for Qdrant vector database — search, upsert, collections, payload management with OpenAI and Gemini embedders",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "qdrant",
+        "vector-database",
+        "vector-search",
+        "embeddings",
+        "openai",
+        "gemini",
+        "similarity-search",
+        "laravel-qdrant"
+    ],
+    "homepage": "https://github.com/claudiogs16/laravel-sdk-qdrant",
+    "support": {
+        "issues": "https://github.com/claudiogs16/laravel-sdk-qdrant/issues",
+        "source": "https://github.com/claudiogs16/laravel-sdk-qdrant"
+    },
+    "authors": [
+        {
+            "name": "Claudio Gomes",
+            "email": "claudiogs16@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Wontonee",
+            "email": "saju@wontonee.com",
+            "role": "Original Author"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "orchestra/testbench": "^9.0|^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Claudiogs16\\LarQ\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Claudiogs16\\LarQ\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Claudiogs16\\LarQ\\Providers\\LarQServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    }
+}
